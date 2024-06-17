@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "my-brain"
+version = "0.1.0"
+description = "This is my brain, An AI agentic application that will help me do note taking and research"
+authors = ["OriginalByteMe <noahrijkaard@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+modal = "^0.62.223"
+interactions-fastapi = "^0.0.1"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
