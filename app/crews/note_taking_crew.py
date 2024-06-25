@@ -10,10 +10,20 @@ class NoteTakingCrew:
         note_taking_tasks_instance = NoteTakingTasks()
         self.note_maker_agent = note_agent_instance.note_maker_agent(llm=llm)
         self.prd_note_task = note_taking_tasks_instance.create_prd_md_note(agent=self.note_maker_agent, transcript=transcript)
+        self.normal_note_task = note_taking_tasks_instance.create_normal_md_note(agent=self.note_maker_agent, transcript=transcript)
 
-    def kickoff(self):
+    def prd_note(self):
         crew = Crew(
             agents=[self.note_maker_agent], tasks=[self.prd_note_task], verbose=True
+        )
+
+        results = crew.kickoff()
+
+        return results
+
+    def normal_note(self):
+        crew = Crew(
+            agents=[self.note_maker_agent], tasks=[self.normal_note_task], verbose=True
         )
 
         results = crew.kickoff()

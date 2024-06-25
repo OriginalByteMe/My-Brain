@@ -6,12 +6,13 @@ authors = ["OriginalByteMe <noahrijkaard@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.10,<=3.13"
 modal = "^0.62.223"
 interactions-fastapi = "^0.0.1"
 requests = "^2.32.3"
 isort = "^5.13.2"
 black = "^24.4.2"
+crewai = {extras = ["tools"], version = "^0.32.2"}
 
 
 [build-system]
